@@ -17,6 +17,7 @@
 <td><?= $row['id'] ?>.</td>
 <td><?= $row['firstname'] ?></td>
 <td><?= $row['lastname'] ?></td>
+<td><a href="xuser.php?id=<?= $row['id'] ?>">x</a></td>
 </tr>
 
 <? } ?>
