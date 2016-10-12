@@ -22,6 +22,16 @@
 <? } ?>
 </table>
 
+<hr/>
+
+Add New User:
+<br/>
+<form method="POST" action="adduser.php">
+firstname: <input type="text" name="firstname"/>
+lastname: <input type="text" name="lastname"/>
+<br/>
+<input type="submit"/>
+</form>
 
 </div>
 
