@@ -53,15 +53,39 @@
     </nav>
 
     <div style="padding: 10px; font-family: sans-serif; font-size: 18px;">
-	<p>Mall Manager v1.0</p>
 
-	<ol>
-	<li><a href="/users">List Users</a></li>
-	<li>List Stores</li>
-	</ol>
+<p><a href="/index.php">Mall Manager v1.0</a>: List Stores</p>
 
 
-	</div>
+<table>
+<? 
+    $conn = mysqli_connect("localhost", "root", "root", "MALLMANAGER");
+    $query = mysqli_query($conn, "select * from MALLMANAGER");
+    while ($row = mysqli_fetch_array($query)) {
+?> 
 
+<tr>
+<td><?= $row['floornumber'] ?>.</td>
+<td><?= $row['store'] ?></td>
+<td><a href="xuser.php?id=<?= $row['store'] ?>">x</a></td>
+</tr>
+
+<? } ?>
+</table>
+
+<hr/>
+
+Add New User:
+<br/>
+<form method="POST" action="addstore.php">
+Store: <input type="text" name="store"/>
+Floor Number: <input type="text" name="floornumber"/>
+<br/>
+<input type="submit"/>
+</form>
+
+</div>
   </body>
 </html>
+
+
